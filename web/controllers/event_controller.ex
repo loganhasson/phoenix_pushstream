@@ -10,5 +10,8 @@ defmodule PhoenixPushstream.EventController do
                    |> Map.delete("type")
 
     PhoenixPushstream.Endpoint.broadcast("events:#{id}", type, event_params)
+
+    conn
+    |> json(%{message: "success"})
   end
 end
