@@ -9,6 +9,6 @@ defmodule PhoenixPushstream.EventController do
                    |> Map.delete("id")
                    |> Map.delete("type")
 
-    PhoenixPushstream.Endpoint.broadcast("events:#{id}", type, params)
+    PhoenixPushstream.Endpoint.broadcast("events:#{id}", type, event_params)
   end
 end
